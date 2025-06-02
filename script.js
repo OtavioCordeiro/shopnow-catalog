@@ -1,7 +1,11 @@
 const products = [
   { id: 1, name: "Notebook", price: 3500 },
   { id: 2, name: "Smartphone", price: 1800 },
-  { id: 3, name: "Fone de Ouvido", price: 200 }
+  { id: 3, name: "Fone de Ouvido", price: 200 },
+  { id: 4, name: "Placa de video", price: 8000 },
+  { id: 5, name: "SSD", price: 400 },
+  { id: 6, name: "Gabinete gamer", price: 900 },
+  { id: 7, name: "Teclado", price: 100 },
 ];
 
 function renderProducts(filteredProducts) {
@@ -16,7 +20,6 @@ function renderProducts(filteredProducts) {
   });
 }
 
-// Função para filtrar os produtos
 function filterProductsByPrice(maxPrice) {
   if (maxPrice === "") {
     renderProducts(products);
@@ -29,8 +32,9 @@ function filterProductsByPrice(maxPrice) {
 // Primeira renderização com todos os produtos
 renderProducts(products);
 
-// Adiciona evento de escuta no input
-const priceFilterInput = document.getElementById("priceFilter");
-priceFilterInput.addEventListener("input", function () {
-  filterProductsByPrice(this.value);
+// 🟢 Agora, só filtra ao clicar no botão
+const button = document.getElementById("btnFilter");
+button.addEventListener("click", function () {
+  const inputValue = document.getElementById("priceFilter").value;
+  filterProductsByPrice(inputValue);
 });
