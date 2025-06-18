@@ -29,7 +29,6 @@ function filterProductsByPrice(maxPrice) {
   }
 }
 
-// Primeira renderização com todos os produtos
 renderProducts(products);
 
 // 🟢 Agora, só filtra ao clicar no botão
