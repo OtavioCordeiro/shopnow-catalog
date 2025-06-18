@@ -33,6 +33,7 @@ function filterProductsByPrice(maxPrice) {
 renderProducts(products);
 
 // 🟢 Agora, só filtra ao clicar no botão
+// Adicionar um comentário
 const button = document.getElementById("btnFilter");
 button.addEventListener("click", function () {
   const inputValue = document.getElementById("priceFilter").value;
